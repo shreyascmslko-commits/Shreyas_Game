@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>NEON NEXUS: THE INFINITE MAZE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+  <div id="ui-root">
+    <header id="titlebar">
+      <div id="logo">
+        <canvas id="logo-canvas" width="520" height="120"></canvas>
+      </div>
+      <div id="menu-right">
+        <div id="best-display">Best: —</div>
+        <button id="btn-sound" class="icon">♪</button>
+        <button id="btn-settings" class="icon">⚙</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <div id="menu-panel" class="panel">
+        <h1 class="big">NEON NEXUS</h1>
+        <p class="sub">THE INFINITE MAZE</p>
+        <div id="menu-buttons">
+          <button class="primary" id="btn-play">Play Adventure</button>
+          <button id="btn-time">Time Trial</button>
+          <button id="btn-endless">Endless Maze</button>
+          <button id="btn-daily">Daily Challenge</button>
+          <button id="btn-levels">Level Selection</button>
+          <button id="btn-how">How to Play</button>
+        </div>
+        <div id="mini-preview" aria-hidden="true"></div>
+        <div id="credits-small">Created by Shreyas Chaturvedi</div>
+      </div>
+
+      <div id="game-panel" class="panel hidden">
+        <div id="hud">
+          <div id="hud-left">
+            <div id="level-name" class="hud-item"></div>
+            <div id="time-left" class="hud-item"></div>
+          </div>
+          <div id="hud-center">
+            <div id="score" class="hud-item">Score: 0</div>
+          </div>
+          <div id="hud-right">
+            <div id="keys" class="hud-item">Keys: 0</div>
+            <div id="abilities" class="hud-item"></div>
+          </div>
+        </div>
+
+        <div id="game-wrap">
+          <canvas id="game" tabindex="0"></canvas>
+
+          <div id="controls-touch" class="touch-controls">
+            <div id="dpad">
+              <button class="dbtn" data-dir="up">▲</button>
+              <div class="db-row">
+                <button class="dbtn" data-dir="left">◀</button>
+                <button class="dbtn" data-dir="down">▼</button>
+                <button class="dbtn" data-dir="right">▶</button>
+              </div>
+            </div>
+            <div id="ability-buttons">
+              <button class="ability" data-ability="dash">DASH</button>
+              <button class="ability" data-ability="phase">PHASE</button>
+              <button class="ability" data-ability="scan">SCAN</button>
+            </div>
+          </div>
+
+          <div id="overlay-panel" class="overlay hidden">
+            <div id="overlay-content"></div>
+            <div class="overlay-actions">
+              <button id="overlay-close">Close</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="controls-desktop" class="desktop-controls">
+          <button id="btn-pause">❚❚</button>
+          <button id="btn-restart">↺</button>
+          <button id="btn-back">← Menu</button>
+        </div>
+
+        <div id="result-panel" class="panel hidden">
+          <h2 id="result-title">Level Complete</h2>
+          <div id="result-stats"></div>
+          <div class="result-actions">
+            <button id="btn-next">Next Level</button>
+            <button id="btn-replay">Replay</button>
+            <button id="btn-to-menu">Menu</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="levels-panel" class="panel hidden">
+        <h2>Level Selection</h2>
+        <div id="levels-list"></div>
+        <div class="panel-actions">
+          <button id="levels-back">Back</button>
+        </div>
+      </div>
+
+      <div id="how-panel" class="panel hidden">
+        <h2>How to Play</h2>
+        <div class="how-content">
+          <p>Navigate neon mazes to collect energy orbs, find keys, activate switches and reach the exit portal before time runs out.</p>
+          <ul>
+            <li>Move: Arrow keys / WASD / On-screen D-Pad / Swipe</li>
+            <li>Abilities: Dash, Phase Shift (through special walls), Scanner (reveal secrets)</li>
+            <li>Avoid moving hazards and lasers. Use switches to open doors.</li>
+          </ul>
+          <p>Tips: Explore for hidden rooms, use abilities sparingly, and try Time Trial or Endless for replay.</p>
+        </div>
+        <div class="panel-actions">
+          <button id="how-back">Back</button>
+        </div>
+      </div>
+
+      <div id="settings-panel" class="panel hidden">
+        <h2>Settings</h2>
+        <label><input type="checkbox" id="opt-music" /> Music</label>
+        <label><input type="checkbox" id="opt-sfx" checked /> Sound Effects</label>
+        <label><input type="checkbox" id="opt-reduce" /> Reduced Motion</label>
+        <label><input type="checkbox" id="opt-contrast" /> High Contrast Mode</label>
+        <div class="panel-actions">
+          <button id="settings-back">Back</button>
+        </div>
+      </div>
+
+    </main>
+
+    <footer id="footer">
+      <div id="footer-left">NEON NEXUS</div>
+      <div id="footer-right">Created by Shreyas Chaturvedi</div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+:root{
+  --bg:#060616;
+  --glass: rgba(255,255,255,0.04);
+  --accent-cyan: #00f0ff;
+  --accent-blue: #3ab3ff;
+  --accent-magenta: #ff3ad1;
+  --accent-violet: #9b5cff;
+  --accent-gold: #ffd76b;
+  --text:#e8f6ff;
+  --muted:#9aa7b2;
+  --glass-border: rgba(255,255,255,0.06);
+  --shadow: 0 6px 18px rgba(0,0,0,0.6);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#000015 0%, #050718 40%, #061028 100%);}
+body.loading{opacity:0;transition:opacity .35s ease}
+#ui-root{min-height:100vh;display:flex;flex-direction:column;color:var(--text)}
+header#titlebar{display:flex;align-items:center;justify-content:space-between;padding:18px 24px}
+#logo{display:flex;align-items:center;gap:14px}
+#logo-canvas{background:linear-gradient(90deg,#071026,#0b0220);border-radius:10px;box-shadow:var(--shadow);border:1px solid var(--glass-border)}
+.big{font-size:46px;letter-spacing:2px;margin:8px 0;color:transparent;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-magenta));-webkit-background-clip:text}
+.sub{color:var(--muted);margin-top:-8px}
+.panel{max-width:980px;margin:8px auto;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;border:1px solid var(--glass-border);box-shadow:var(--shadow)}
+#menu-panel{text-align:center;padding:36px}
+#menu-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:18px 0}
+button{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:10px;cursor:pointer;transition:all .18s ease}
+button.primary{background:linear-gradient(90deg,var(--accent-cyan),var(--accent-magenta));color:#021;box-shadow:0 8px 30px rgba(0,240,255,0.06);border:0}
+button:hover{transform:translateY(-4px)}
+#mini-preview{height:140px;border-radius:10px;margin-top:10px;background:linear-gradient(90deg,rgba(0,0,0,0.35),rgba(255,255,255,0.02));box-shadow:inset 0 0 40px rgba(0,0,0,0.5)}
+#credits-small{margin-top:12px;color:var(--muted)}
+.hidden{display:none}
+#game-panel{padding:8px}
+#game-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+#game{background:linear-gradient(180deg,#040616,#021021);border-radius:10px;display:block;max-width:100%;touch-action:none;box-shadow:0 14px 40px rgba(2,6,20,0.7);border:1px solid rgba(255,255,255,0.04)}
+.touch-controls{position:absolute;left:18px;bottom:12px;display:flex;gap:12px;align-items:end}
+#dpad{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px;border-radius:12px;border:1px solid var(--glass-border)}
+.dbtn{width:46px;height:46px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--text);font-weight:700}
+.db-row{display:flex;gap:6px;justify-content:center;margin-top:6px}
+#ability-buttons{display:flex;flex-direction:column;gap:8px}
+.ability{padding:8px 10px;border-radius:8px;background:linear-gradient(90deg,#111 0,#0c0220 100%);border:1px solid rgba(255,255,255,0.04);color:var(--accent-cyan)}
+.hud-item{padding:6px 10px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);margin:4px}
+#hud{display:flex;justify-content:space-between;align-items:center;padding:8px 18px}
+.desktop-controls{display:flex;gap:10px;justify-content:center;padding:10px}
+#overlay-panel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88%;max-width:720px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid var(--glass-border)}
+.overlay.hidden{display:none}
+#result-panel{max-width:720px;margin:18px auto}
+#footer{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.02)}
+#footer-right{font-weight:600}
+@media(max-width:720px){
+  .big{font-size:32px}
+  #logo-canvas{width:360px;height:80px}
+  .dbtn{width:54px;height:54px}
+  #game{width:92vw;height:68vh}
+}
